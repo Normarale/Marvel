@@ -1,0 +1,5 @@
+#Cards:hover{
+  transform:translateY(-15px);
+  filter: opacity(.5);
+  box-shadow: 0 12Px 16px rgba(0,0,0,0.2);
+}

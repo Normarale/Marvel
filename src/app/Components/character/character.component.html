@@ -1,0 +1,31 @@
+<div class="text-center">
+
+  <h1 class="titulo"><img src="../../../assets/Image/logomarvel.png" width="250" height="80" alt=""> {{title}}: <small>{{character.name}}</small></h1>
+
+</div>
+
+<button  (click)="setEditar()">Edit</button>    <button  (click)="SetEditaCharacter()">Guardar</button><br><br>
+<button  (click)="setEliminar(idCharacter)">Delete</button><br>
+
+<br><label>Name:</label><input *ngIf="getEditar()" type="text" #name [(ngModel)]="character.name">
+
+
+  <div class="row">
+      <div class="col-sm-6">
+          <img src="{{character.thumbnailPath}}.{{character.thumbnailExtension}}" alt="..." class="img-thumbnail">
+
+        </div>
+      <div class="col-sm-6">
+
+          <p><strong>DESCRIPTION:</strong> {{characterDesc}}</p>
+         <label>Description</label> <input *ngIf="getEditar()" type="text" #descripction [(ngModel)]="characterDesc">
+
+         <p><strong>MODIFIED: </strong> {{character.modified | date}}</p>
+         <label>modified</label><input *ngIf="getEditar()" type="text" #modified [(ngModel)]="character.modified"><br><br>
+         <a href="{{character.urls}}" target="_blank" class="btn btn-outline-danger btn-block">More Details</a><br>
+
+          <a routerLink="/characters" class="float-right">-Return-</a>
+
+
+      </div>
+  </div>
